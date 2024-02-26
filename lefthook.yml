@@ -1,0 +1,12 @@
+pre-commit:
+  parallel: true
+  commands:
+    eslint:
+      glob: '*.{ts,tsx}'
+      run: npx eslint {staged_files} --fix
+    stylelint:
+      glob: '*.{css,ts,tsx}'
+      run: npx stylelint {staged_files} --fix
+    prettier:
+      glob: '*'
+      run: npx prettier {staged_files} -u --write
